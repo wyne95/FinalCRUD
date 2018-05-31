@@ -1,0 +1,110 @@
+<br>
+<button type="button" value = "Add User" class="btn btn-primary" routerLink = "/"><< Back</button>
+
+<h2>
+  Add New User
+</h2>
+
+<form id = "formNewProduct" name = "formNewProduct" #productData = "ngForm" (ngSubmit) = "addNewProduct(productData.value)">
+
+<div class="form-group">
+<label> First Name: </label><input type = "text" name="Fname" id="Fname" maxlength="35" placeholder="First Name" ngModel #Fname="ngModel" required pattern="[a-zA-Z][a-zA-Z ]+"><br>
+</div>
+<div *ngIf="Fname.touched" class="alert alert-danger">
+<div *ngIf="Fname.errors?.required">First Name is required</div>
+</div>
+
+<div class="form-group">
+<label> Last Name: </label><input type = "text" name="Lname" id="Lname" maxlength="35" placeholder="Last Name" ngModel #Lname="ngModel" required pattern="[a-zA-Z][a-zA-Z ]+"><br>
+</div>
+<div *ngIf="Lname.touched" class="alert alert-danger">
+  <div *ngIf="Lname.errors?.required">Last Name is required</div>
+  </div>
+
+  <div class="form-group">
+<label for="Nation">Nationality</label>
+<select id="Nation" name="Nation" [(ngModel)]="Nation" class="form-control" ><option value ="MY">Malaysian</option>
+<option value ="SG">Singaporean</option>
+<option value ="JP">Japanese</option>
+</select><br>
+</div>
+
+<div class="form-group">
+<label> Identity No: </label><input type = "text" name="idNo" id="idNo" placeholder="Identity No" ngModel #idNo="ngModel" required pattern="[0-9]+"><br>
+</div>
+<div *ngIf="idNo.touched" class="alert alert-danger">
+  <div *ngIf="idNo.errors?.required">ID Number is required</div>
+  </div>
+
+  <div class="form-group">
+<label> Birth Date: </label><input type = "date" name="Bdate" id="Bdate" placeholder="Birth Date" ngModel required><br>
+  </div>
+
+  <div class="form-group">
+<label> Contact No: </label><input type = "text" name="Cont" id="Cont" maxlength="15" placeholder="Contact No" ngModel #Cont="ngModel" required pattern="[0-9]*"><br>
+</div>
+<div *ngIf="Cont.touched" class="alert alert-danger">
+  <div *ngIf="Cont.errors?.required">Contact Number is required</div>
+  </div>
+
+  <div class="form-group">
+<label> Address: </label><input type = "text" name="Addr" id="Addr" maxlength="100" placeholder="Address" ngModel #Addr="ngModel" required><br>
+</div>
+<div *ngIf="Addr.touched" class="alert alert-danger">
+  <div *ngIf="Addr.errors?.required">Address is required</div>
+  </div>
+
+  <div class="form-group">
+<label> City: </label><input type = "text" name="City" id="City" maxlength="35" placeholder="City" ngModel #City="ngModel" required pattern="[a-zA-Z][a-zA-Z ]+"><br>
+</div>
+<div *ngIf="City.touched" class="alert alert-danger">
+  <div *ngIf="City.errors?.required">City is required</div>
+  </div>
+
+  <div class="form-group">
+<label> State: </label><input type = "text" name="State" id="State" maxlength="35" placeholder="State" ngModel #State="ngModel" required pattern="[a-zA-Z][a-zA-Z ]+"><br>
+</div>
+<div *ngIf="State.touched" class="alert alert-danger">
+  <div *ngIf="State.errors?.required">State is required</div>
+  </div>
+
+  <div class="form-group">
+<label> Post Code: </label><input type = "text" name="Pcode" id="Pcode" maxlength="15" placeholder="Post Code" ngModel #Pcode="ngModel" required pattern="[0-9]+"><br>
+</div>
+<div *ngIf="Pcode.touched" class="alert alert-danger">
+  <div *ngIf="Pcode.errors?.required">Post Code is required</div>
+  </div>
+
+  <div class="form-group">
+    <label for="Country">Country</label>
+    <select id="Country" name="Country" [(ngModel)]="Country" class="form-control">
+      <option value="Malaysia">Malaysia</option>
+      <option value="Singapore">Singapore</option>
+      <option value="Japan">Japan</option>
+    </select><br>
+  </div>
+<div class="form-group">
+<label> Email: </label><input type = "email" name="Email" id="Email" maxlength="100" placeholder="Email" ngModel #Email="ngModel" required pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"><br>
+</div>
+<div *ngIf="Email.touched" class="alert alert-danger">
+  <div *ngIf="Email.errors?.required">Email is required</div>
+  </div>
+
+  <div class="form-group">
+<label> Bank Account: </label><input type = "text" name="Bacc" id="Bacc" maxlength="100" placeholder="Bank Account" ngModel required pattern="[0-9]*"><br>
+</div>
+
+<div class="form-group">
+<label> Issue Bank: </label><input type = "text" name="Ibank" id="Ibank" maxlength="100" placeholder="Issue Bank" ngModel required pattern="[a-zA-Z][a-zA-Z ]+"><br>
+</div>
+
+<div class="form-group">
+<label> Attactment	: </label><input type = "text" name="Att" id="Att" placeholder="Attactment	" ngModel required><br>
+</div>
+
+
+<button type="submit" value = "Add User" class="btn btn-success" [disabled]="productData.invalid">Add User</button>
+</form>
+
+<br>
+<h3 *ngIf = "isAdded" >{{confirmationString}}</h3>

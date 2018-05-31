@@ -1,0 +1,53 @@
+
+  <body>
+<h1>
+  User List
+</h1>
+
+<button type="button" value = "Add User" class="btn btn-success" routerLink = '/product'> + Add New User </button>
+
+<br><br>
+<table class="table table-hover">
+  <th>ID</th>
+  <th>First Name</th>
+  <th>Last Name</th>
+  <th>Nationality</th>
+  <th>Identity No</th>
+  <th>Birth Date</th>
+  <th>Contact No</th>
+  <th>Address</th>
+  <th>City</th>
+  <th>State</th>
+  <th>Post Code</th>
+  <th>Country</th>
+  <th>Email</th>
+  <th>Bank Account</th>
+  <th>Issue Bank</th>
+  <th>Attactment</th>
+  <th></th>
+  <th></th>
+  <tr *ngFor = "let product of products">
+  <td>{{product.Nation + product.idNo}}</td>
+  <td>{{product.Fname}}</td>
+  <td>{{product.Lname}}</td>
+  <td>{{product.Nation}}</td>
+  <td>{{product.idNo}}</td>
+  <td>{{product.Bdate}}</td>
+  <td>{{product.Cont}}</td>
+  <td>{{product.Addr}}</td>
+  <td>{{product.City}}</td>
+  <td>{{product.State}}</td>
+  <td>{{product.Pcode}}</td>
+  <td>{{product.Country}}</td>
+  <td>{{product.Email}}</td>
+  <td>{{product.Bacc}}</td>
+  <td>{{product.Ibank}}</td>
+  <td>{{product.Att}}</td>
+  
+  
+  <td (click) ="deleteProduct(product.id)" ><a class="btn btn-danger">Delete</a></td>
+  <td [routerLink] = "['/updateProduct', product.id]"><a class="btn btn-success">Update</a></td>
+
+</tr>
+</table>
+</body>

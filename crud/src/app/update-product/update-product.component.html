@@ -1,0 +1,43 @@
+<br>
+<button type="button" value = "Add User" class="btn btn-primary" routerLink = "/"><< Back</button>
+
+<h2>
+  Update User Data
+</h2>
+
+<p *ngIf = "!exist"> User doesn't exist.</p>
+
+<form id = "formNewProduct" name = "formNewProduct" #productData = "ngForm" (ngSubmit) = "updateProduct(productData.value)">
+
+<label> First Name: </label><input type = "text" name="Fname" id="Fname" placeholder="First Name" [(ngModel)] = "data.Fname" ngModel><br>
+
+<label> Last Name: </label><input type = "text" name="Lname" id="Lname" placeholder="Last Name" [(ngModel)] = "data.Lname" ngModel><br>
+
+<label> Nationality: </label><input type = "text" name="Nation" id="Nation" placeholder="Nationality" [(ngModel)] = "data.Nation" ngModel><br>
+
+<label> Identity No: </label><input type = "text" name="idNo" id="idNo" placeholder="Identity No" [(ngModel)] = "data.idNo" ngModel><br>
+
+<label> Birth Date: </label><input type = "text" name="Bdate" id="Bdate" placeholder="Birth Date" [(ngModel)] = "data.Bdate" ngModel><br>
+
+<label> Contact No: </label><input type = "text" name="Cont" id="Cont" placeholder="Contact No" [(ngModel)] = "data.Cont" ngModel><br>
+
+<label> Address: </label><input type = "text" name="Addr" id="Addr" placeholder="Address" [(ngModel)] = "data.Addr" ngModel><br>
+
+<label> City: </label><input type = "text" name="City" id="City" placeholder="City" [(ngModel)] = "data.City" ngModel><br>
+
+<label> State: </label><input type = "text" name="State" id="State" placeholder="State" [(ngModel)] = "data.State" ngModel><br>
+
+<label> Post Code: </label><input type = "text" name="Pcode" id="Pcode" placeholder="Post Code" [(ngModel)] = "data.Pcode" ngModel><br>
+
+<label> Country: </label><input type = "text" name="Country" id="Country" placeholder="Country" [(ngModel)] = "data.Country" ngModel><br>
+
+<label> Email: </label><input type = "text" name="Email" id="Email" placeholder="Email" [(ngModel)] = "data.Email" ngModel><br>
+
+<label> Bank Account: </label><input type = "text" name="Bacc" id="Bacc" placeholder="Bank Account" [(ngModel)] = "data.Bacc" ngModel><br>
+
+<label> Issue Bank: </label><input type = "text" name="Ibank" id="Ibank" placeholder="Issue Bank" [(ngModel)] = "data.Ibank" ngModel><br>
+
+<label> Attactment	: </label><input type = "text" name="Att" id="Att" placeholder="Attactment" [(ngModel)] = "data.Att" ngModel><br>
+
+<input type="submit" value = "Update User" class="btn btn-success">
+</form>
